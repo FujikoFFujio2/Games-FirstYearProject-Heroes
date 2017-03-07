@@ -25,15 +25,16 @@ public class GameManager : MonoBehaviour {
 
 		foreach (var piece in GameObject.FindGameObjectsWithTag("Piece")) {
 			puzzle.pieces [(int)piece.transform.position.x, (int)piece.transform.position.y] = piece.GetComponent<piece> ();
+			Debug.Log (piece);
 		}
 
 		foreach (var item in puzzle.pieces) {
 			Debug.Log (item.gameObject.name);
 		}
 
-		Shuffle ();
+		//Shuffle ();
 	}
-
+	/*
 	void Shuffle()
 	{
 		foreach (var piece in puzzle.pieces) {
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 	}
-
+	*/
 	Vector2 CheckDimensions()
 	{
 		Vector2 aux = Vector2.zero;
